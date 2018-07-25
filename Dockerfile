@@ -1,5 +1,4 @@
 FROM python
-VOLUME /dev/ttyS2
 RUN pip install --upgrade pip
 RUN pip install pyserial grpcio-tools googleapis-common-protos \
    && mkdir /home/microphone \
