@@ -8,6 +8,9 @@ import serial
 from time import sleep
 
 
+PORT = '/dev/ttyS2'
+
+
 class ArduinoListener:
 
     def __init__(self, port, baudrate):
@@ -56,8 +59,8 @@ if __name__ == '__main__':
     timestamp = 11010101212
     frequency = 3334
 
-    arduino = ArduinoListener('/dev/ttyS3', 9600)
+    arduino = ArduinoListener(PORT, 9600)
     grpc = GRPC_Transmitter('localhost', '50051')
 
     arduino.controlLed()
-    grpc.send_sound_via_protobuffers(frequency, timestamp)
+    # grpc.send_sound_via_protobuffers(frequency, timestamp)
