@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.imageviewer";
+option java_outer_classname = "SendingImagesProto";
+option objc_class_prefix = "HLW";
+
+package imageviewer;
+
+service SendingSoundData{
+    rpc sendSoundData (SoundMessage) returns (ServerConfirmation) {}
+}
+
+message SoundMessage {
+    int64 timestamp = 1;
+    int32 frequency = 2;
+}
+
+message ServerConfirmation {
+    bytes confirm = 1;
+}
