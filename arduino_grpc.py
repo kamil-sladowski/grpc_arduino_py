@@ -62,5 +62,5 @@ if __name__ == '__main__':
     arduino = ArduinoListener(PORT, 9600)
     grpc = GRPC_Transmitter('localhost', '50051')
 
-    arduino.controlLed()
+    arduino.control_led()
     # grpc.send_sound_via_protobuffers(frequency, timestamp)
